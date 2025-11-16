@@ -1,0 +1,28 @@
+@binhminh28 ➜ /workspaces/lab2b-create-a-toy-cryptocurrency (main) $ python coin.py genkey 
+secret(hex): 13156c20b3f567eff0f4f40d95f377bcc203d2959912a9650a1edec94e0bea1a
+address: ae59a9157fc7f5ceb05d262d6163153a2ed7c85a
+@binhminh28 ➜ /workspaces/lab2b-create-a-toy-cryptocurrency (main) $ python coin.py genkey 
+secret(hex): 644b1ce9d9ccbae58ac9bf721df374619b0cc8e7d57cecd4522198b24b614d4a
+address: 1b54021302cf82d4e49d0e3a51a6f30714a2da3b
+@binhminh28 ➜ /workspaces/lab2b-create-a-toy-cryptocurrency (main) $ python coin.py faucet ae59a9157fc7f5ceb05d262d61
+63153a2ed7c85a 100 
+OK faucet
+@binhminh28 ➜ /workspaces/lab2b-create-a-toy-cryptocurrency (main) $ python coin.py send ae59a9157fc7f5ceb05d262d6163153a2ed7c85a 1b54021302cf82d4e49d0e3a51a6f30714a2da3b 5
+applied: True
+from: 95.0
+to: 5.0
+@binhminh28 ➜ /workspaces/lab2b-create-a-toy-cryptocurrency (main) $ python -m unittest -v
+test_happy_path_and_nonce (test_coin.TestCoin.test_happy_path_and_nonce) ... ok
+test_insufficient_balance (test_coin.TestCoin.test_insufficient_balance) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.001s
+
+OK
+@binhminh28 ➜ /workspaces/lab2b-create-a-toy-cryptocurrency (main) $ 
+
+
+# bài tập gửi 2 giao dịch cùng address với nouce tăng dần
+@binhminh28 ➜ /workspaces/lab2b-create-a-toy-cryptocurrency (main) $ python coin.py send2
+send 10.0 from 973cff0805ddea48292384cdadc3f00d3054612f to 0aced500ed8602aa4a7fb2c817c7c40ea3906e4e is True with nonce (1) -> balance 40.0
+send 5.0 from 973cff0805ddea48292384cdadc3f00d3054612f to 0aced500ed8602aa4a7fb2c817c7c40ea3906e4e is True with nonce (2) -> balance 35.0
